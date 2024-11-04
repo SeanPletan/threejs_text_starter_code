@@ -12,7 +12,18 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
-
+//////////////
+//GridHelper//
+//////////////
+//const size = 10; 
+//const divisions = 20; 
+//const gridHelper = new THREE.GridHelper( size, divisions ); 
+//scene.add( gridHelper );
+//////////////
+//AxesHelper//
+//////////////
+//const axesHelper = new THREE.AxesHelper( 5 );
+//scene.add( axesHelper );
 
 
 /**
@@ -22,8 +33,8 @@ const textureLoader = new THREE.TextureLoader()
 const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
 const matcapMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
 
-const donutGeometry = new THREE.TorusGeometry(.3, .2, 20, 45)
-const donut = new THREE.Mesh(donutGeometry, matcapMaterial)
+const knotGeometry = new THREE.TorusKnotGeometry(.5, 0.15, 256, 16, 2, 7);
+const donut = new THREE.Mesh(knotGeometry, matcapMaterial)
 scene.add(donut)
 
 window.addEventListener('resize', () =>
