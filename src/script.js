@@ -33,7 +33,7 @@ const textureLoader = new THREE.TextureLoader()
 const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
 const matcapMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
 
-const knotGeometry = new THREE.TorusKnotGeometry(.5, 0.15, 256, 16, 2, 7);
+const knotGeometry = new THREE.TorusKnotGeometry(.5, 0.15, 256, 16, 2, 3);
 const donut = new THREE.Mesh(knotGeometry, matcapMaterial)
 scene.add(donut)
 
